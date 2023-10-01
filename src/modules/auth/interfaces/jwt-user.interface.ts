@@ -4,9 +4,8 @@ export interface IJwtUser {
     iat?: number;
     exp?: number;
     id: number;
-    name: string;
-    middleName: string;
-    surname: string;
+    firstName: string;
+    lastName: string;
     email: string;
     role: UserRole;
 }

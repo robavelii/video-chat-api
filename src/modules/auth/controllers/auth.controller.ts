@@ -19,7 +19,7 @@ export class AuthController {
     ) {}
 
     private async loginUser(user: UserEntity): Promise<ILoginData> {
-        if (!user.isActive) {
+        if (user.isSuspended) {
             throw new UnauthorizedException('User is not active');
         }
 

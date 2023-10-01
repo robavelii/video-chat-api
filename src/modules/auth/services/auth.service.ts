@@ -33,9 +33,8 @@ export class AuthService {
         const userData: IJwtUser = {
             id: user.id,
             role: user.role,
-            name: user.name,
-            middleName: user.middleName,
-            surname: user.surname,
+            firstName: user.firstName,
+            lastName: user.lastName,
             email: user.email,
         };
 

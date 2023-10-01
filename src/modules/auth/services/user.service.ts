@@ -28,7 +28,7 @@ export class UserService extends AbstractEntityService {
         return this.userRepository.findOne({
             where: {
                 id,
-                isActive: options.includeSuspended ? undefined : true,
+                isSuspended: options.includeSuspended ? undefined : false,
                 refreshToken: options.refreshToken,
             },
         });

@@ -25,7 +25,7 @@ export class AuthUserInterceptor implements NestInterceptor {
             if (!user) {
                 throw new UnauthorizedException();
             }
-            if (user.isActive) {
+            if (user.isSuspended) {
                 throw new UnauthorizedException('User is suspended');
             }
 

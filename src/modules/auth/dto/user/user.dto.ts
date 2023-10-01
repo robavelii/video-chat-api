@@ -9,10 +9,10 @@ export class UserDto extends AbstractDto {
     email: string;
 
     @ApiProperty()
-    name: string;
+    firstName: string;
 
     @ApiProperty()
-    middleName: string;
+    lastName: string;
 
     @ApiProperty()
     createdAt: Date;
@@ -24,17 +24,17 @@ export class UserDto extends AbstractDto {
     role: UserRole;
 
     @ApiProperty()
-    isActive: boolean;
+    isSuspended: boolean;
 
     constructor(user: UserEntity) {
         super(user);
 
         this.email = user.email;
-        this.name = user.name;
-        this.middleName = user.middleName;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
         this.createdAt = user.createdAt;
         this.lastLogin = user.lastLogin;
         this.role = user.role;
-        this.isActive = user.isActive;
+        this.isSuspended = user.isSuspended;
     }
 }

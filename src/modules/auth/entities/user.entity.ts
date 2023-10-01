@@ -9,17 +9,14 @@ export class UserEntity extends AbstractIdEntity<UserDto> {
     @Column({ unique: true })
     email: string;
 
-    @Column({ nullable: false })
+    @Column({ nullable: true })
     password: string;
 
-    @Column({ nullable: false })
-    name: string;
+    @Column()
+    firstName: string;
 
-    @Column({ nullable: true })
-    middleName: string;
-
-    @Column({ nullable: false })
-    surname: string;
+    @Column()
+    lastName: string;
 
     @Column({ nullable: true })
     @Index()
@@ -31,8 +28,8 @@ export class UserEntity extends AbstractIdEntity<UserDto> {
     @Column({ type: 'enum', enum: UserRole, default: UserRole.MANAGER })
     role: UserRole;
 
-    @Column({ default: true })
-    isActive: boolean;
+    @Column({ default: false })
+    isSuspended: boolean;
 
     dtoClass = UserDto;
 }
