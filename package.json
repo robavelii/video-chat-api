@@ -4,7 +4,7 @@
     "private": "true",
     "license": "UNLICENSED",
     "scripts": {
-        "build:prod": "tsc -p tsconfig.build.json && cp ./src/modules/order/assets ./dist/src/modules/order -R",
+        "build:prod": "tsc -p tsconfig.build.json",
         "start:hmr": "node dist/src/main.hmr.ts",
         "start:dev": "ts-node src/main.ts",
         "start:prod": "node dist/src/main.js",
