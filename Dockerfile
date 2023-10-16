@@ -1,14 +1,14 @@
-FROM node:14 AS dist
+FROM node:16 AS dist
 COPY package.json yarn.lock ./
 RUN yarn install
 COPY . ./
 RUN yarn build:prod
 
-FROM node:14 AS node_modules
+FROM node:16 AS node_modules
 COPY package.json yarn.lock ./
 RUN yarn install --prod
 
-FROM node:14
+FROM node:16
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
