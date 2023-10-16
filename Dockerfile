@@ -8,6 +8,9 @@ FROM node:16 AS node_modules
 COPY package.json yarn.lock ./
 RUN yarn install --prod
 
+# Install Redis
+FROM redis:latest AS redis
+
 FROM node:16
 RUN mkdir -p /usr/src/app
 
