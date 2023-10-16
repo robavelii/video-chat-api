@@ -20,8 +20,8 @@ COPY --from=dist /usr/src/app/dist /usr/src/app/dist
 COPY --from=node_modules /usr/src/app/node_modules /usr/src/app/node_modules
 COPY . /usr/src/app
 
-# Copy Redis from the Redis image
-COPY --from=redis /usr/local/bin/redis* /usr/local/bin/
-COPY --from=redis /usr/local/lib/redis* /usr/local/lib/
+# # Copy Redis from the Redis image
+# COPY --from=redis /usr/local/bin/redis* /usr/local/bin/
+# COPY --from=redis /usr/local/lib/redis* /usr/local/lib/
 
 CMD [ "yarn", "start:prod" ]
