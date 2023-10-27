@@ -19,9 +19,9 @@ Postgres import:
 
 * `./scripts/postgres/export.sh prod|dev ./import.sql`
 
-For open Swagger localhost:/port/
+For Swagger api localhost:/port/api-docs
 
-For run locally run command below
+For running locally
 docker run --name mypostgres -e POSTGRES_PASSWORD=password -e POSTGRES_USER=username -e POSTGRES_DB=dbname -p 5433:5432 -d postgres
 
 Migrations
