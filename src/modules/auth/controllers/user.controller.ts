@@ -61,7 +61,9 @@ export class UserController {
     }
 
     @Get()
-    @Auth({ roles: [UserRole.SUPER_ADMIN, UserRole.ADMIN] })
+    @Auth({ roles: [
+        // UserRole.SUPER_ADMIN,
+         UserRole.ADMIN] })
     @ApiResponse({ type: PaginationDto })
     async getAllUsers(
         @Query() dto: UserFindAllDto,
@@ -72,7 +74,9 @@ export class UserController {
     }
 
     @Get(':id')
-    @Auth({ roles: [UserRole.SUPER_ADMIN, UserRole.ADMIN] })
+    @Auth({ roles: [
+        // UserRole.SUPER_ADMIN,
+         UserRole.ADMIN] })
     @ApiResponse({ type: UserDto })
     async getUser(@Param('id', ParseIntPipe) id: number): Promise<UserDto> {
         const user = await this.findById(id, true);
@@ -80,7 +84,9 @@ export class UserController {
     }
 
     @Post()
-    @Auth({ loadUser: true, roles: [UserRole.SUPER_ADMIN, UserRole.ADMIN] })
+    @Auth({ loadUser: true, roles: [
+        // UserRole.SUPER_ADMIN, 
+        UserRole.ADMIN] })
     @ApiResponse({ type: UserDto })
     async createUser(
         @Body() dto: UserCreateDto,
@@ -93,7 +99,9 @@ export class UserController {
     }
 
     @Put(':id')
-    @Auth({ loadUser: true, roles: [UserRole.SUPER_ADMIN, UserRole.ADMIN] })
+    @Auth({ loadUser: true, roles: [
+        // UserRole.SUPER_ADMIN,
+         UserRole.ADMIN] })
     @ApiResponse({ type: UserDto })
     async updateUser(
         @Param('id', ParseIntPipe) id: number,
@@ -116,7 +124,9 @@ export class UserController {
     }
 
     @Delete(':id')
-    @Auth({ loadUser: true, roles: [UserRole.SUPER_ADMIN, UserRole.ADMIN] })
+    @Auth({ loadUser: true, roles: [
+        // UserRole.SUPER_ADMIN, 
+        UserRole.ADMIN] })
     @ApiResponse({ type: SuccessDto })
     async deleteUser(
         @Param('id', ParseIntPipe) id: number,

@@ -1,11 +1,11 @@
 export enum UserRole {
-    SUPER_ADMIN = 'SUPER_ADMIN',
+    // SUPER_ADMIN = 'SUPER_ADMIN',
     ADMIN = 'ADMIN',
-    MANAGER = 'MANAGER',
+    USER = 'USER',
 }
 
 export const USER_ROLE_RANK: Record<UserRole, number> = {
-    SUPER_ADMIN: 1000,
+    // SUPER_ADMIN: 1000,
     ADMIN: 500,
-    MANAGER: 100,
+    USER: 100,
 };

@@ -55,8 +55,9 @@ export function Auth(options?: IAuthOptions) {
             ApiOperation({
                 summary:
                     options.roles.length === 2 &&
-                    options.roles.includes(UserRole.ADMIN) &&
-                    options.roles.includes(UserRole.SUPER_ADMIN)
+                    options.roles.includes(UserRole.ADMIN) 
+                    // &&
+                    // options.roles.includes(UserRole.SUPER_ADMIN)
                         ? '(only admin)'
                         : '',
                 description: 'Roles accepted: ' + options.roles.join(', '),
