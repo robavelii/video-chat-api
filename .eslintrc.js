@@ -34,6 +34,12 @@ module.exports = {
         'import',
     ],
     rules: {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
         'simple-import-sort/imports': 'error',
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/no-unused-vars': [

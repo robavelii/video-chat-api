@@ -14,6 +14,7 @@ import {
     ApiOperation,
     ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import e from 'express';
 
 import { AuthUserInterceptor } from '../interceptors/auth-user.interceptor';
@@ -54,11 +55,11 @@ export function Auth(options?: IAuthOptions) {
         decorators.push(
             ApiOperation({
                 summary:
-                    options.roles.length === 2 &&
-                    options.roles.includes(UserRole.ADMIN) 
-                    // &&
-                    // options.roles.includes(UserRole.SUPER_ADMIN)
-                        ? '(only admin)'
+                    options.roles.length === 1 &&
+                    options.roles.includes(UserRole.ADMIN)
+                        ? // &&
+                          // options.roles.includes(UserRole.SUPER_ADMIN)
+                          '(only admin)'
                         : '',
                 description: 'Roles accepted: ' + options.roles.join(', '),
             }),
