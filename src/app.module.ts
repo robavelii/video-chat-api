@@ -11,6 +11,9 @@ import { GatewayModule } from './gateway/gateway.module';
 import { GatewayModule } from './src/modules/gateway/gateway.module';
 import { GatewayModule } from './modules/gateway/gateway.module';
 import { MessagesModule } from './modules/messages/messages.module';
+import { GroupsModule } from './modules/groups/groups.module';
+import { ContactsModule } from './modules/contacts/contacts.module';
+import { NotificationsModule } from './modules/notifications/notifications.module';
 
 @Module({
     imports: [
@@ -29,6 +32,9 @@ import { MessagesModule } from './modules/messages/messages.module';
         AuthModule,
         GatewayModule,
         MessagesModule,
+        GroupsModule,
+        ContactsModule,
+        NotificationsModule,
        
     ],
 })
